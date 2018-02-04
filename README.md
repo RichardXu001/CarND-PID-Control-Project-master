@@ -108,18 +108,12 @@ weight Kd allows driving through turns faster.
 ##Describe how the final hpyer-parameters were chosen.
 I manually choose the  PID parameters and I could make whole laps around the track. Then I added the throttle controller and re-tuned both controllers to make faster laps. 
 
-The final PID parameter is :
-Kp = 0.115, Ki = 0.0006, and Kd = 3
+I make some more modification and tune it by hand. 
+Finally, PID parameter is :
+Kp = 0.3, Ki = 0.0006, and Kd = 15
 
-The large parameter settings have problems following the curves without leaving the track, and the small parameter settings oscillate too much on the straights. 
-So then I figure out one way to combine these two setting.
-That is I update Kp and Kd based on the value of steering angle.
-And this cause a more stable driving mode.
+You can see a video.flv movie which I recorded when I run the parameter.
+I have included it in this folder.
 
-Here is the update ways:
-
-Kp = 0.06 + fabs(angle)*0.01;
-
-Kd = 3 + fabs(angle)*0.1;
 
 
